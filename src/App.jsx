@@ -1,30 +1,33 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-import{ BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation'
-import Moto1 from './components/Moto1';
-import Moto2 from './components/Moto2';
-import Moto3 from './components/Moto3';
-import Moto4 from './components/Moto4';
-import Moto5 from './components/Moto5';
-import Moto6 from './components/Moto6';
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
     <>
-      <BrowserRouter>
       <div>
-        <h1 id="title" className='text-center my-3' >Proyecto Galeria </h1>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-      <Routes>
-        <Route path="/moto1" element={<Moto1 className='image-size'/>}/>
-        <Route path="/moto2" element={<Moto2 className='image-size'/>}/>
-        <Route path="/moto3" element={<Moto3 className='image-size'/>}/>
-        <Route path="/moto4" element={<Moto4 className='image-size'/>}/>
-        <Route path="/moto5" element={<Moto5 className='image-size'/>}/>
-        <Route path="/moto6" element={<Moto6 className='image-size'/>}/>
-      </Routes>
-      <Navigation />
-      </BrowserRouter>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   )
 }
